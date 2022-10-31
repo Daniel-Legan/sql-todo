@@ -76,7 +76,17 @@ app.put('/tasks/:id', (req, res) => {
     });
 });
 
-const port = 3000;
+// console.log('process.env', process.env);
+console.log('your home directory is', process.env.HOME);
+console.log('your favorite food is', process.env.FAV_FOOD);
+console.log('your preferred port is', process.env.PORT);
+
+// in terminal FAV_FOOD=artichokes PORT=8000 npm start
+
+// npm install dotenv
+
+
+const port = process.env.PORT || 3000; 
 
 console.log(`We're going to listen on port`, port);
 app.listen(port, () => {
